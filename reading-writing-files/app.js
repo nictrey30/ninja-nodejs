@@ -15,3 +15,8 @@ fs.readFile('readMe.txt', 'utf-8', (err, data) => {
     console.log('file written');
   });
 });
+
+// fs.unlink('writeMe.txt', (err) => {
+//   if (err) throw err;
+//   console.log('file deleted');
+// });
