@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const port = 3000;
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 // tell express that we want to use ejs as our view engine
 app.set('view engine', 'ejs');
@@ -21,7 +23,12 @@ app.get('/', (req, res) => {
 app.get('/contact', (req, res) => {
   // res.send('this is the contact page');
   // res.sendFile(__dirname + '/contact.html');
-  res.render('contact');
+  console.log(req.query);
+  res.render('contact', { q: req.query });
+});
+app.post('/contact', urlencodedParser, (req, res) => {
+  console.log(req.body);
+  res.render('contact-success', { data: req.body });
 });
 app.get('/profile/:name', (req, res) => {
   // res.send(`You requested to see a profile of ${req.params.name}`);

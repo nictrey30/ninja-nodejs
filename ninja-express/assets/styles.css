@@ -28,3 +28,19 @@ ul {
   list-style: none;
   padding: 0;
 }
+
+#contact-form input {
+  display: block;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  width: 400px;
+  padding: 5px;
+  margin: 5px auto 15px 0;
+}
+#contact-form input[type='submit'] {
+  width: 70px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: none;
+}
